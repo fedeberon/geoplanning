@@ -27,7 +27,10 @@ public class Ubicacion {
     @JoinColumn(name = "idElemento")
     private Elemento elemento;
 
-    private Integer idFormato;
+    @ManyToOne
+    @JoinColumn(name = "idFormato")
+    private MapFormato formato;
+
     private Integer idMedio;
     private String direccion;
     private String nroAgip;
