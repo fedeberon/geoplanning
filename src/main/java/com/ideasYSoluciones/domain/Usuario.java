@@ -1,0 +1,68 @@
+package com.ideasYSoluciones.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuarios")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+public class Usuario {
+
+    @Id
+    @Column(name = "idUsuario")
+    private Long id;
+
+    @Column(name = "usuario")
+    private String username;
+
+    @Column(name = "password")
+    private String password;
+
+    @Transient
+    private String nombreCompleto;
+
+    @Transient
+    private String eMail;
+
+    @Transient
+    private String telefono;
+
+    @Transient
+    private String estado;
+
+    @ManyToOne
+    @JoinColumn(name = "idTipoUsuario")
+    private TipoUsuario tipoUsuario;
+
+    @ManyToOne
+    @JoinColumn(name = "idAnunciante")
+    private MapAnunciante mapAnunciante;
+
+    @ManyToOne
+    @JoinColumn(name = "idProducto")
+    private Producto producto;
+
+    @Transient
+    private String cargo;
+
+    @ManyToOne
+    @JoinColumn(name = "idContratoInv")
+    private ContratoInversion contratoInversion;
+
+    @ManyToOne
+    @JoinColumn(name = "idContratoAud")
+    private ContratoAuditoria contratoAuditoria;
+
+    @ManyToOne
+    @JoinColumn(name = "idContratoMap")
+    private ContratoMapping contratoMapping;
+
+    public Usuario() { }
+}
