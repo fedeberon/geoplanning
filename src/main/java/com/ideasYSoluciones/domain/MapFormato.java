@@ -10,6 +10,7 @@ public class MapFormato {
     private Long id;
 
     private String descripcion;
+
     private Long evalua;
 
 }

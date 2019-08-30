@@ -23,7 +23,10 @@ public class Ubicacion {
     @JoinColumn(name = "idEmpresa")
     private Empresa empresa;
 
-    private Integer idElemento;
+    @ManyToOne
+    @JoinColumn(name = "idElemento")
+    private Elemento elemento;
+
     private Integer idFormato;
     private Integer idMedio;
     private String direccion;
