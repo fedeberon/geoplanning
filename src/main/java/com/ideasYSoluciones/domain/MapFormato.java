@@ -1,7 +1,18 @@
 package com.ideasYSoluciones.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "map_formato")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
 
 public class MapFormato {
 
@@ -9,8 +20,12 @@ public class MapFormato {
     @Column(name = "idFormato")
     private Long id;
 
+    @Column(name = "descripcion")
     private String descripcion;
 
+    @Column(name = "evalua")
     private Long evalua;
 
+    public MapFormato() {
+    }
 }

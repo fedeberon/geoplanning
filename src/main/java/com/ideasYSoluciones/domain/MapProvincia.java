@@ -8,21 +8,23 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "empresas")
+@Table(name = "map_provincias")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 
-public class Empresa {
-
+public class MapProvincia {
     @Id
-    @Column(name = "idEmpresa")
+    @Column(name = "idProvincia")
     private Long id;
 
     @Column(name = "descripcion")
     private String descripcion;
 
-    public Empresa() {
+    @Column(name = "evalua")
+    private Long evalua;
+
+    public MapProvincia() {
     }
 }
