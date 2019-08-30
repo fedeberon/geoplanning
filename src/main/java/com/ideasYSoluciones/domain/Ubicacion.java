@@ -17,7 +17,7 @@ public class Ubicacion {
 
     @Id
     @Column(name = "idUbicacion")
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "idEmpresa")
