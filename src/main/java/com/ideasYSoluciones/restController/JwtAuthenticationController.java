@@ -1,4 +1,4 @@
-package com.ideasYSoluciones.controller;
+package com.ideasYSoluciones.restController;
 
 import com.ideasYSoluciones.config.JwtTokenUtil;
 import com.ideasYSoluciones.model.JwtRequest;

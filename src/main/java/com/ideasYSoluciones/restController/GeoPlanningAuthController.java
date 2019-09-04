@@ -1,4 +1,4 @@
-package com.ideasYSoluciones.controller;
+package com.ideasYSoluciones.restController;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GeoPlanningAuthController {
 
-    @RequestMapping({ "/hello" })
+    @RequestMapping({"/hello"})
     public String firsPage() {
         return "Hola";
     }

@@ -37,32 +37,26 @@ public class Usuario {
     @Transient
     private String estado;
 
-//    @ManyToOne
-//    @JoinColumn(name = "idTipoUsuario")
-//    private TipoUsuario tipoUsuario;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idAnunciante")
-//    private MapAnunciante mapAnunciante;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idProducto")
-//    private Producto producto;
-//
-//    @Transient
-//    private String cargo;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoInv")
-//    private ContratoInversion contratoInversion;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoAud")
-//    private ContratoAuditoria contratoAuditoria;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoMap")
-//    private ContratoMapping contratoMapping;
+    @Transient
+    private TipoUsuario tipoUsuario;
+
+    @Transient
+    private Anunciante mapAnunciante;
+
+    @Transient
+    private Producto producto;
+
+    @Transient
+    private String cargo;
+
+    @Transient
+    private ContratoInversion contratoInversion;
+
+    @Transient
+    private ContratoAuditoria contratoAuditoria;
+
+    @Transient
+    private ContratoMapping contratoMapping;
 
     public Usuario() { }
 }

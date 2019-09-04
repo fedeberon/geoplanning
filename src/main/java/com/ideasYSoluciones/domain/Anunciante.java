@@ -8,12 +8,12 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "map_anunciantes")
+@Table(name = "anunciantes")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-public class MapAnunciante {
+public class Anunciante {
 
     @Id
     @Column(name = "idAnunciante")
@@ -22,6 +22,6 @@ public class MapAnunciante {
     @Transient
     private String descripcion;
 
-    public MapAnunciante() {
+    public Anunciante() {
     }
 }
