@@ -37,32 +37,32 @@ public class Usuario {
     @Column(name = "estado")
     private String estado;
 
-    @ManyToOne
-    @JoinColumn(name = "idTipoUsuario")
-    private TipoUsuario tipoUsuario;
-
-    @ManyToOne
-    @JoinColumn(name = "idAnunciante")
-    private MapAnunciante mapAnunciante;
-
-    @ManyToOne
-    @JoinColumn(name = "idProducto")
-    private Producto producto;
-
-    @Column(name = "cargo")
-    private String cargo;
-
-    @ManyToOne
-    @JoinColumn(name = "idContratoInv")
-    private ContratoInversion contratoInversion;
-
-    @ManyToOne
-    @JoinColumn(name = "idContratoAud")
-    private ContratoAuditoria contratoAuditoria;
-
-    @ManyToOne
-    @JoinColumn(name = "idContratoMap")
-    private ContratoMapping contratoMapping;
+//    @ManyToOne
+//    @JoinColumn(name = "idTipoUsuario")
+//    private TipoUsuario tipoUsuario;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "idAnunciante")
+//    private MapAnunciante mapAnunciante;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "idProducto")
+//    private Producto producto;
+//
+//    @Column(name = "cargo")
+//    private String cargo;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "idContratoInv")
+//    private ContratoInversion contratoInversion;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "idContratoAud")
+//    private ContratoAuditoria contratoAuditoria;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "idContratoMap")
+//    private ContratoMapping contratoMapping;
 
     public Usuario() { }
 }

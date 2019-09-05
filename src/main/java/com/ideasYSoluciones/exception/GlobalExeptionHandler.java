@@ -1,4 +1,4 @@
-package com.ideasYSoluciones.exeption;
+package com.ideasYSoluciones.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

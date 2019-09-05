@@ -1,22 +1,17 @@
 package com.ideasYSoluciones.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "map_ubicaciones")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
-
-public class MapUbicacion {
+@Data
+public class Ubicacion implements Serializable {
 
     @Id
     @Column(name = "idUbicacion")
@@ -59,7 +54,7 @@ public class MapUbicacion {
     private MapLocalidad mapLocalidad;
 
     @ManyToOne
-    @JoinColumn(name = "idAnunciante")
+    @JoinColumn(name = "Anunciante")
     private MapAnunciante mapAnunciante;
 
     @Column(name = "cantidad")
@@ -81,10 +76,10 @@ public class MapUbicacion {
     private String direccionNormalizada;
 
     @Column(name = "geo_latitud")
-    private Double geoLatitud;
+    private BigDecimal latitud;
 
     @Column(name = "geo_longitud")
-    private Double geoLongitud;
+    private BigDecimal longitud;
 
     @Column(name = "metroscontacto")
     private Long metrosContacto;
@@ -110,18 +105,19 @@ public class MapUbicacion {
     @Column(name = "id_referencia")
     private String idReferencia;
 
-    @ManyToOne
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idMapBuses")
-    private MapBus idMapBuses;
+    private MapBus mapBus;
 
     @Column(name = "bajaLogica")
-    private Byte bajaLogica;
+    private Boolean bajaLogica;
 
     @Column(name = "fechatransf")
-    private Timestamp fechatransf;
+    private LocalDateTime fechaTransf;
 
     @Column(name = "fecha_alta")
-    private Timestamp fechaAlta;
+    private LocalDateTime fechaAlta;
 
     @ManyToOne
     @JoinColumn(name = "id_altura")
@@ -131,6 +127,6 @@ public class MapUbicacion {
     @JoinColumn(name = "id_visibilidad")
     private MapUbicacionVisibilidad mapUbicacionVisibilidad;
 
-    public MapUbicacion() {
+    public Ubicacion() {
     }
 }
