@@ -1,8 +1,7 @@
 package com.ideasYSoluciones.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 
+import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -105,10 +104,12 @@ public class Ubicacion implements Serializable {
     @Column(name = "id_referencia")
     private String idReferencia;
 
-    @JsonIgnore
+    //Deberia ser una foreign key/problemas con id=0
+    @Transient
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idMapBuses")
-    private MapBus mapBus;
+    @JoinColumn(name = "IdMapBuses")
+    private MapBus mapBuses;
+
 
     @Column(name = "bajaLogica")
     private Boolean bajaLogica;

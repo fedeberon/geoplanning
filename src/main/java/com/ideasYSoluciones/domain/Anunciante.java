@@ -5,18 +5,18 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "anunciantes")
 @Data
 
-public class Producto {
+public class Anunciante {
 
     @Id
-    @Column(name = "idProducto")
+    @Column(name = "idAnunciante")
     private Long id;
 
-    @Column(name = "descripcion")
+    @Column(name = "Descripcion")
     private String descripcion;
 
-    public Producto() {
+    public Anunciante() {
     }
 }

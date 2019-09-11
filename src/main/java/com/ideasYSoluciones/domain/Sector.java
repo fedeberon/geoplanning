@@ -1,18 +1,13 @@
 package com.ideasYSoluciones.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "sectores")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
+@Data
+
 public class Sector {
 
     @Id

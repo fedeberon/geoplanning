@@ -1,18 +1,13 @@
 package com.ideasYSoluciones.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "usuarios")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
+@Data
+
 public class Usuario {
 
     @Id
@@ -25,44 +20,38 @@ public class Usuario {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "nombreCompleto")
+    @Transient
     private String nombreCompleto;
 
-    @Column(name = "eMail")
+    @Transient
     private String eMail;
 
-    @Column(name = "telefono")
+    @Transient
     private String telefono;
 
-    @Column(name = "estado")
+    @Transient
     private String estado;
 
-//    @ManyToOne
-//    @JoinColumn(name = "idTipoUsuario")
-//    private TipoUsuario tipoUsuario;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idAnunciante")
-//    private MapAnunciante mapAnunciante;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idProducto")
-//    private Producto producto;
-//
-//    @Column(name = "cargo")
-//    private String cargo;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoInv")
-//    private ContratoInversion contratoInversion;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoAud")
-//    private ContratoAuditoria contratoAuditoria;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "idContratoMap")
-//    private ContratoMapping contratoMapping;
+    @Transient
+    private TipoUsuario tipoUsuario;
+
+    @Transient
+    private Anunciante mapAnunciante;
+
+    @Transient
+    private Producto producto;
+
+    @Transient
+    private String cargo;
+
+    @Transient
+    private ContratoInversion contratoInversion;
+
+    @Transient
+    private ContratoAuditoria contratoAuditoria;
+
+    @Transient
+    private ContratoMapping contratoMapping;
 
     public Usuario() { }
 }

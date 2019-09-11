@@ -12,11 +12,11 @@ import org.springframework.web.context.request.WebRequest;
 
 
 @ControllerAdvice
-public class GlobalExeptionHandler {
+public class GlobalExceptionHandler {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExeptionHandler.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler( UsernameNotFoundException.class)
+    @ExceptionHandler(UsernameNotFoundException.class)
     public ResponseEntity customHandleNotFound(Exception ex, WebRequest request) {
         LOGGER.error("Handled Error by geoplanning application. ", ex);
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);

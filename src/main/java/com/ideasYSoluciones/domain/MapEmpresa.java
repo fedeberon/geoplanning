@@ -33,7 +33,7 @@ public class MapEmpresa {
     private String html;
 
     @Column(name = "gpmas")
-    private Long gpmas;
+    private Boolean GPMas;
 
     public MapEmpresa() {
     }

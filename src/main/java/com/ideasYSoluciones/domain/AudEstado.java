@@ -1,6 +1,6 @@
 package com.ideasYSoluciones.domain;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,21 +8,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "map_ubicaciones_alturas")
+@Table(name = "aud_estados")
 @Data
 
-public class MapUbicacionAltura {
+public class AudEstado {
 
     @Id
-    @Column(name = "id_altura")
+    @Column(name = "idEstado")
     private Long id;
 
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "ponderador")
-    private Double ponderador;
+    @Column(name = "tipo")
+    private String tipo;
 
-    public MapUbicacionAltura() {
+    @Column(name = "sumaEn")
+    private String sumaEn;
+
+    public AudEstado() {
     }
 }

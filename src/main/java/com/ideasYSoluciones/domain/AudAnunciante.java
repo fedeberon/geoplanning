@@ -7,11 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "map_anunciantes")
 @Entity
+@Table(name = "aud_anunciantes")
 @Data
 
-public class MapAnunciante {
+public class AudAnunciante {
 
     @Id
     @Column(name = "idAnunciante")
@@ -20,6 +20,6 @@ public class MapAnunciante {
     @Column(name = "Descripcion")
     private String descripcion;
 
-    public MapAnunciante() {
+    public AudAnunciante() {
     }
 }

@@ -9,16 +9,12 @@ import javax.persistence.*;
 @Data
 public class MapBusRecorrido {
 
-    @Id
-    @Column(name = "idRecorrido")
-    private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "idMapBuses")
-    private MapBus mapBus;
+    @EmbeddedId
+    private MapBusRecorridoPK id;
 
     @Column(name = "recorrido")
     private String recorrido;
+
 
     @Column(name = "duracion_minutos")
     private Long duracionMinutos;

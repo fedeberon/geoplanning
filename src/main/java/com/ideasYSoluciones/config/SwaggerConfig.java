@@ -32,7 +32,7 @@ public class SwaggerConfig {
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Spring Boot REST API")
                 .description("Geoplanning REST API")
-                .contact(new Contact("Blabla", "www.javaguides.net", "ramesh24fadatare@gmail.com"))
+                .contact(new Contact("Team spicy", "bolivar-software.trello.com", "email@gmail.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .version("1.0.0")

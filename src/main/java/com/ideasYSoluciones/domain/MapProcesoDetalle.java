@@ -1,5 +1,6 @@
 package com.ideasYSoluciones.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,13 +12,8 @@ import java.math.BigDecimal;
 
 public class MapProcesoDetalle {
 
-    @Id
-    @Column(name = "ID")
-    private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "idUbicacion")
-    private Ubicacion ubicacion;
+    @EmbeddedId
+    private MapProcesoDetallePK id;
 
     @Column(name = "Pbr")
     private Double pBR;
@@ -40,9 +36,8 @@ public class MapProcesoDetalle {
     @Column(name = "Coeficiente")
     private BigDecimal coeficiente;
 
-    @ManyToOne
-    @JoinColumn(name = "idElemento")
-    private MapElemento mapElemento;
+    public MapProcesoDetalle() {
+    }
 
-
+    //    private MapProceso proceso;
 }

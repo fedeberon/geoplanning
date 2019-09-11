@@ -1,14 +1,14 @@
 package com.ideasYSoluciones.domain;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "aud_productos")
 @Data
 
-public class Producto {
+public class AudProducto {
 
     @Id
     @Column(name = "idProducto")
@@ -17,6 +17,10 @@ public class Producto {
     @Column(name = "descripcion")
     private String descripcion;
 
-    public Producto() {
+    @ManyToOne
+    @JoinColumn(name = "idAnunciante")
+    private AudAnunciante audAnunciante;
+
+    public AudProducto() {
     }
 }

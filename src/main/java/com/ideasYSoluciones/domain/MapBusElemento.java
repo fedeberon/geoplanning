@@ -2,9 +2,8 @@ package com.ideasYSoluciones.domain;
 
 import lombok.Data;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,15 +12,9 @@ import javax.persistence.Table;
 
 public class MapBusElemento {
 
-    @ManyToOne
-    @JoinColumn(name = "idMapBuses")
-    private MapBus mapBus;
+    @EmbeddedId
+    private MapBusElementoPK id;
 
-    @ManyToOne
-    @JoinColumn(name = "idEmpresa")
-    private MapEmpresa mapEmpresa;
-
-    @ManyToOne
-    @JoinColumn(name = "idElemento")
-    private MapElemento mapElemento;
+    public MapBusElemento() {
+    }
 }
