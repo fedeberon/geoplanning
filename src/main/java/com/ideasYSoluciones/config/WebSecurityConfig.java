@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() { return new CustomPasswordEncoder(); }
+    public PasswordEncoder passwordEncoder() { return new AESPasswordEncoder(); }
 
     @Bean
     @Override
