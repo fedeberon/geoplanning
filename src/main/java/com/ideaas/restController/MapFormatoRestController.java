@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("mapFormato")
+@RequestMapping("api/mapFormato")
 public class MapFormatoRestController {
 
     private MapFormatoService mapFormatoService;
