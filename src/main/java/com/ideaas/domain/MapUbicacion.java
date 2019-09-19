@@ -55,7 +55,7 @@ public class MapUbicacion implements Serializable {
     private AudLocalidad audLocalidad;
 
     @Column(name = "Anunciante")
-    private String mapAnunciante;
+    private String anunciante;
 
     @Column(name = "cantidad")
     private Long cantidad;
