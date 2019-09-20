@@ -15,7 +15,6 @@ public class MapBusRecorrido {
     @Column(name = "recorrido")
     private String recorrido;
 
-
     @Column(name = "duracion_minutos")
     private Long duracionMinutos;
 

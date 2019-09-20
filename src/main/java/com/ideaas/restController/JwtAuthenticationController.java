@@ -3,7 +3,6 @@ package com.ideaas.restController;
 import com.ideaas.config.JwtTokenUtil;
 import com.ideaas.model.JwtRequest;
 import com.ideaas.model.JwtResponse;
-import com.ideaas.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,6 +10,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,10 +19,12 @@ public class JwtAuthenticationController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
     @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {

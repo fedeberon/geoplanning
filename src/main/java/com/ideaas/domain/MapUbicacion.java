@@ -111,7 +111,6 @@ public class MapUbicacion implements Serializable {
     @JoinColumn(name = "IdMapBuses")
     private MapBus mapBuses;
 
-
     @Column(name = "bajaLogica")
     private Boolean bajaLogica;
 
