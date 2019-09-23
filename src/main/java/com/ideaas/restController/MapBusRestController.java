@@ -27,20 +27,20 @@ public class MapBusRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<MapBus> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return mapBusService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<MapBus> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return mapBusService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<MapBus> findAll(@PathVariable Integer pageSize){
         return mapBusService.findAll(pageSize, 0, "id");
     }

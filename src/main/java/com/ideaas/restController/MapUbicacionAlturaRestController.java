@@ -27,20 +27,20 @@ public class MapUbicacionAlturaRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<MapUbicacionAltura> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return mapUbicacionAlturaService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<MapUbicacionAltura> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return mapUbicacionAlturaService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<MapUbicacionAltura> findAll(@PathVariable Integer pageSize){
         return mapUbicacionAlturaService.findAll(pageSize, 0, "id");
     }

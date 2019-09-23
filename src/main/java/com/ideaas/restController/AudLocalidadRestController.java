@@ -27,20 +27,20 @@ public class AudLocalidadRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<AudLocalidad> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return audLocalidadService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<AudLocalidad> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return audLocalidadService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<AudLocalidad> findAll(@PathVariable Integer pageSize){
         return audLocalidadService.findAll(pageSize, 0, "id");
     }

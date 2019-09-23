@@ -27,20 +27,20 @@ public class MapMedioRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<MapMedio> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return mapMedioService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<MapMedio> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return mapMedioService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<MapMedio> findAll(@PathVariable Integer pageSize){
         return mapMedioService.findAll(pageSize, 0, "id");
     }

@@ -28,20 +28,20 @@ public class MapProvinciaRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<MapProvincia> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return mapProvinciaService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<MapProvincia> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return mapProvinciaService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<MapProvincia> findAll(@PathVariable Integer pageSize){
         return mapProvinciaService.findAll(pageSize, 0, "id");
     }

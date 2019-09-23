@@ -45,7 +45,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         security.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/authenticate").permitAll()
+                .antMatchers("/api/authenticate",
+                                         "/v2/api-docs",
+                                         "/configuration/ui",
+                                         "/swagger-resources/**",
+                                         "/configuration/security",
+                                         "/swagger-ui.html",
+                                         "/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -53,6 +59,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
         security.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 

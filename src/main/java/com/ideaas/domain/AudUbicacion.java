@@ -21,7 +21,7 @@ public class AudUbicacion {
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "mapUbicacion")
+    @Column(name = "ubicacion")
     private String ubicacion;
 
     @ManyToOne

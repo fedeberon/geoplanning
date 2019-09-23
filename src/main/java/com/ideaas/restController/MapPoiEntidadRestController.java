@@ -27,20 +27,20 @@ public class MapPoiEntidadRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}/{sortBy}")
+    @GetMapping("/list/{pageSize}/{pageNo}/{sortBy}")
     public List<MapPoiEntidad> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo, @PathVariable String sortBy){
         return mapPoiEntidadService.findAll(pageSize, pageNo, sortBy);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}/{pageNo}")
+    @GetMapping("/list/{pageSize}/{pageNo}")
     public List<MapPoiEntidad> findAll(@PathVariable Integer pageSize, @PathVariable Integer pageNo){
         return mapPoiEntidadService.findAll(pageSize, pageNo, "id");
     }
 
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/obtener/{pageSize}")
+    @GetMapping("/list/{pageSize}")
     public List<MapPoiEntidad> findAll(@PathVariable Integer pageSize){
         return mapPoiEntidadService.findAll(pageSize, 0, "id");
     }
