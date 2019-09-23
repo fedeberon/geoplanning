@@ -1,12 +1,9 @@
 package com.ideaas.dao;
 
-import com.ideaas.domain.Usuario;
+import com.ideaas.domain.AudCircuito;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserDao extends JpaRepository<Usuario, Long> {
-
-    Usuario findByUsername(String username);
-
+public interface AudCircuitoDao extends JpaRepository<AudCircuito, Long> {
 }

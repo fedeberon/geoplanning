@@ -1,25 +1,20 @@
 package com.ideaas.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tipo_usuarios")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
+@Data
+
 public class TipoUsuario {
 
     @Id
     @Column(name = "idTipoUsuario")
     private Long id;
 
-    @Transient
+    @Column(name = "descripcion")
     private String descripcion;
 
     public TipoUsuario() {

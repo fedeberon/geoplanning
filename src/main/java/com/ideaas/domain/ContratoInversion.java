@@ -1,18 +1,13 @@
 package com.ideaas.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "contratos_inversion")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
+@Data
+
 public class ContratoInversion {
 
     @Id
@@ -27,13 +22,13 @@ public class ContratoInversion {
     @JoinColumn(name = "idRubro")
     private Rubro rubro;
 
-    @Transient
+    @Column(name = "fechaDesde")
     private String fechaDesde;
 
-    @Transient
+    @Column(name = "fechaHasta")
     private String fechaHasta;
 
-    @Transient
+    @Column(name = "creatividades")
     private String creatividades;
 
     public ContratoInversion() {

@@ -1,18 +1,13 @@
 package com.ideaas.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "contratos_mapping")
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
+@Data
+
 public class ContratoMapping {
 
     @Id
@@ -23,7 +18,7 @@ public class ContratoMapping {
     @JoinColumn(name = "idContrato")
     private Contrato contrato;
 
-    @Transient
+    @Column(name = "idEVP")
     private Long idEVP;
 
     public ContratoMapping() {
