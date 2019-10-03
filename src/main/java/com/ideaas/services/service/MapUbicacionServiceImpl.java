@@ -43,6 +43,7 @@ public class MapUbicacionServiceImpl implements MapUbicacionService {
 
     @Override
     public List<MapUbicacion> findAll(MapUbicacionRequest mapUbicacionRequest) {
+
         return dao.findAllBy(mapUbicacionRequest);
     }
 
